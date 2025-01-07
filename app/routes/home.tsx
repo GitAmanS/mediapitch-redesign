@@ -6,7 +6,7 @@ import Welcome from "~/components/home/Welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
+    { title: "MediaPitch" },
     { name: "description", content: "Welcome to React Router!" },
   ];
 }
