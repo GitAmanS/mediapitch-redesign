@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="w-full flex flex-row mt-20">
+      <div className="w-full flex flex-row mt-auto pb-8">
         <div className="w-full">
           <p className="text-xs text-grey-300">
             Privacy & Cookies Policy <br />

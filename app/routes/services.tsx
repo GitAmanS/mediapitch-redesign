@@ -146,7 +146,7 @@ const Services = () => {
               <img
                 src="services.jpg"
                 alt="Background"
-                className="w-full rounded-tl-[200px] rounded-br-[200px] h-fit object-cover object-center"
+                className="w-full mx-h rounded-tl-[200px] rounded-br-[200px] h-fit object-cover object-center"
               />
             </div>
           </div>
