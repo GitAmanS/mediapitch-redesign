@@ -37,4 +37,4 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         port: ${{ secrets.FTP_PORT || '21' }}
         local-dir: build
-        server-dir: /home/u955849202/domains/mediapitch.in/public_html/staging
+        server-dir: /home/u955849202/domains/mediapitch.in/public_html/staging/
