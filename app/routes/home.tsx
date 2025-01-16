@@ -1,7 +1,5 @@
 import type { Route } from "./+types/home";
 
-import Homebackground from "../components/homebackground";
-import Header from "../components/header";
 import Welcome from "../components/home/Welcome";
 import Services from "../components/home/Services";
 
