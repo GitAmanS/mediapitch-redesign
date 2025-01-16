@@ -1,16 +1,18 @@
 import type { Route } from "./+types/home";
 
-import Homebackground from "~/components/homebackground";
-import Header from "~/components/header";
-import Welcome from "~/components/home/Welcome";
-import Services from "~/components/home/Services";
+import Homebackground from "../components/homebackground";
+import Header from "../components/header";
+import Welcome from "../components/home/Welcome";
+import Services from "../components/home/Services";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "MediaPitch" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "MediaPitch - Professional Writing Services" },
+    { name: "description", content: "MediaPitch offers expert writing, editing, rewriting, and digital content creation services to elevate your brand's presence." },
+    { name: "keywords", content: "writing services, content creation, editing, rewriting, professional writing, digital media, content writing, brand storytelling" },
   ];
 }
+
 
 export default function Home() {
   return <div className="">
