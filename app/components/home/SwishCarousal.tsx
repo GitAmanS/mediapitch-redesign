@@ -26,7 +26,8 @@ export default function SwishCarousel() {
   }, []);
 
   return (
-    <div className="w-full h-full overflow-hidden relative">
+    <div className="w-full h-64 md:h-full overflow-hidden relative">
+
       <AnimatePresence>
         {images.map((img, index) =>
           index === current ? (

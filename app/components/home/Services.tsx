@@ -2,14 +2,14 @@ import React from 'react'
 
 const Services = () => {
     return (
-        <div className='md:px-20 py-28 min-h-screen h-fit flex flex-col  font-outfit'>
+        <div className='px-4 md:px-20 md:py-28 min-h-screen h-fit flex flex-col  font-outfit'>
             <h1 className='text-5xl text-start font-[300]'>
                 Welcome to Media Pitch, <br /> one-stop solution for all your media-related needs.
             </h1>
 
             <div className='flex flex-col px-4 md:px-28'>
 
-                <div className='flex '>
+                <div className='flex flex-col md:flex-row'>
                     <div className='flex flex-col w-full md:w-[30%]  pt-16 space-y-3'>
                         <h1 className='text-3xl text-start font-[500]'>
                             Website Designing
@@ -29,16 +29,16 @@ const Services = () => {
 
 
 
-                <div className='flex '>
+                <div className='flex flex-col md:flex-row'>
 
-                    <div className='flex flex-col ml-auto w-1/2 py-12 px-12'>
+                    <div className='flex flex-col ml-auto w-full md:w-1/2 py-12 px-12'>
                         <img
                             src="services/designing.jpg"
                             alt="Website Designing" 
                             className='w-full h-fit' />
                     </div>
 
-                    <div className='flex flex-col w-[30%]  pt-16 space-y-3'>
+                    <div className='flex flex-col w-full md:w-[30%]  pt-16 space-y-3'>
                         <h1 className='text-3xl text-start font-[500]'>
                         Designing (Print)
 
@@ -51,8 +51,8 @@ const Services = () => {
 
 
 
-                <div className='flex '>
-                    <div className='flex flex-col w-[30%]  pt-16 space-y-3'>
+                <div className='flex flex-col md:flex-row'>
+                    <div className='flex flex-col w-full md:w-[30%]  pt-16 space-y-3'>
                         <h1 className='text-3xl text-start font-[500]'>
                         Social Media
 
@@ -61,7 +61,7 @@ const Services = () => {
                         In the era of digitalization, social media is more than just a platform—it's a powerful vehicle that drives your brand's message home. We provide comprehensive social media services, optimizing your online presence and expanding your digital footprint. Let us amplify your brand's voice, engage your audience, and drive impact on a global scale.
                         </p>
                     </div>
-                    <div className='flex flex-col w-1/2 py-12 px-12'>
+                    <div className='flex flex-col w-full md:w-1/2 py-12 px-12'>
                         <img
                             src="services/social_media.jpg"
                             alt="Website Designing" 
@@ -71,16 +71,16 @@ const Services = () => {
 
 
 
-                <div className='flex '>
+                <div className='flex flex-col md:flex-row'>
 
-                    <div className='flex flex-col ml-auto w-1/2 py-12 px-12'>
+                    <div className='flex flex-col ml-auto w-full md:w-1/2 py-12 px-12'>
                         <img
                             src="services/writing.jpg"
                             alt="Website Designing" 
                             className='w-full h-fit' />
                     </div>
 
-                    <div className='flex flex-col w-[30%]  pt-16 space-y-3'>
+                    <div className='flex flex-col w-full md:w-[30%]  pt-16 space-y-3'>
                         <h1 className='text-3xl text-start font-[500]'>
                         Editing Writing & Rewriting
 
@@ -92,8 +92,8 @@ const Services = () => {
                 </div>
 
 
-                <div className='flex '>
-                    <div className='flex flex-col w-[30%]  pt-16 space-y-3'>
+                <div className='flex flex-col md:flex-row'>
+                    <div className='flex flex-col w-full md:w-[30%]  pt-16 space-y-3'>
                         <h1 className='text-3xl text-start font-[500]'>
                         Photo Editing
 
@@ -102,7 +102,7 @@ const Services = () => {
                         Photographs are the windows into the soul of your brand. Our professional photo editing services transform your images into vibrant visuals that captivate and engage. Whether you're a photographer, a business owner, or an individual, we're here to turn your images into powerful narratives that resonate with your audience.
                         </p>
                     </div>
-                    <div className='flex flex-col w-1/2 py-12 px-12'>
+                    <div className='flex flex-col w-full md:w-1/2 py-12 px-12'>
                         <img
                             src="services/photo_editing.jpg"
                             alt="Website Designing" 
@@ -112,16 +112,16 @@ const Services = () => {
 
 
 
-                <div className='flex '>
+                <div className='flex flex-col md:flex-row'>
 
-                    <div className='flex flex-col ml-auto w-1/2 py-12 px-12'>
+                    <div className='flex flex-col ml-auto w-full md:w-1/2 py-12 px-12'>
                         <img
                             src="services/appdev.jpg"
                             alt="Website Designing" 
                             className='w-full h-fit' />
                     </div>
 
-                    <div className='flex flex-col w-[30%]  pt-16 space-y-3'>
+                    <div className='flex flex-col w-full md:w-[30%]  pt-16 space-y-3'>
                         <h1 className='text-3xl text-start font-[500]'>
                         App Development
 
@@ -133,8 +133,8 @@ const Services = () => {
                 </div>
 
 
-                <div className='flex '>
-                    <div className='flex flex-col w-[30%]  pt-16 space-y-3'>
+                <div className='flex flex-col md:flex-row'>
+                    <div className='flex flex-col w-full md:w-[30%]  pt-16 space-y-3'>
                         <h1 className='text-3xl text-start font-[500]'>
                         Cloud Infrastructure
 
@@ -143,7 +143,7 @@ const Services = () => {
                         Embrace the future of business with our comprehensive cloud infrastructure services. We help you leverage the power of cloud computing, enhancing scalability, flexibility, and efficiency. Our cloud experts design, implement, and manage tailored cloud solutions that align with your unique business needs. With Media Pitch, your transition to the cloud is smooth and seamless.
                         </p>
                     </div>
-                    <div className='flex flex-col w-1/2 py-12 px-12'>
+                    <div className='flex flex-col w-full md:w-1/2 py-12 px-12'>
                         <img
                             src="services/cloud.jpg"
                             alt="Website Designing" 

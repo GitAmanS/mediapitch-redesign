@@ -16,7 +16,7 @@ export default function Home() {
   return <div className="">
     {/* <Welcome /> */}
     
-    <div className="  ">
+    <div className=" w-full ">
       <Welcome/>
 
       <Services/>

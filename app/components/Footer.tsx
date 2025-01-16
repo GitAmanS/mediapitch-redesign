@@ -6,13 +6,13 @@ import { FaLinkedinIn } from "react-icons/fa";
 const Footer = () => {
   return (
     <div
-      className="flex justfiy-center items-center flex-col min-h-[85vh] md:px-20 font-outfit relative bg-cover bg-no-repeat"
+      className="flex w-full justfiy-center items-center flex-col min-h-[85vh] px-4 md:px-20 font-outfit relative bg-cover bg-no-repeat"
       style={{
         backgroundImage: "url('wavebackground.png')",
         backgroundPosition: "bottom",
       }}
     >
-      <div className="flex h-full space-x-20  py-8  justify-between flex-row">
+      <div className="flex h-full space-y-4 md:space-y-0  md:space-x-20  py-8  justify-between flex-col md:flex-row">
         <div className="flex-col mt-auto h-fit w-full text-xs font-[400]  text-[#022a4e]">
           <div className="h-full py-4">
             <img src="logo.jpg" alt="logo" className="w-1/2 h-fit" />
@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="w-full flex flex-row mt-auto pb-8">
+      <div className="w-full flex flex-col md:flex-row mt-auto pb-8">
         <div className="w-full">
           <p className="text-xs text-grey-300">
             Privacy & Cookies Policy <br />
@@ -77,7 +77,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="flex w-full space-x-8 text-xs place-items-end justify-end">
+        <div className="flex flex-col md:flex-row w-full md:space-x-8 text-xs md:place-items-end justify-end">
           <p>Data Protection Policy</p>
           <p>Terms of Service</p>
           <p>Privacy Policy</p>
