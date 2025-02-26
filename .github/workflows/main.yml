@@ -1,0 +1,41 @@
+name: Build and Deploy Next.js to FTP
+
+on:
+  push:
+    branches:
+      - main  # Deploy only when the main branch is pushed
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'  # Specify the Node.js version
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build and export the Next.js app as static files
+      - name: Build Next.js App
+        run: |
+          npm run build
+
+      # Step 5: Upload build to FTP server
+      - name: Deploy to Apache Server via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: 89.117.157.57
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT || '21' }}
+          local-dir: out/
+          server-dir: /
