@@ -28,7 +28,6 @@ jobs:
       - name: Build Next.js App
         run: |
           npm run build
-          npx next export
 
       # Step 5: Upload build to FTP server
       - name: Deploy to Apache Server via FTP
