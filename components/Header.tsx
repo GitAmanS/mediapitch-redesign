@@ -1,11 +1,14 @@
-import { Link, useLocation } from "react-router";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -25,23 +28,16 @@ const Header = () => {
 
   const getLinkClass = (path) => {
     const baseClass = "py-5 hover:text-[#1E429B] transition-colors";
-    return location.pathname === path ? `${baseClass} text-[#1E429B]` : baseClass;
+    return pathname === path ? `${baseClass} text-[#1E429B]` : baseClass;
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -55,16 +51,15 @@ const Header = () => {
         <div className="flex items-center md:space-x-12">
           <div className="py-5">
             {/* Logo */}
-            <img src="logo.jpg" alt="logo" className="w-8 h-fit" />
+            <img src="/logo.jpg" alt="logo" className="w-8 h-fit" />
           </div>
           <nav>
             <ul className="flex text-[16px] space-x-10 mr-auto font-[300] pb-1">
-              <Link className={getLinkClass("/")} to="/">
+              <Link className={getLinkClass("/")} href="/">
                 Home
               </Link>
-              <Link
+              <div
                 className="relative py-5"
-                to="/services"
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 onMouseLeave={() => setIsDropdownOpen(false)}
               >
@@ -72,23 +67,22 @@ const Header = () => {
                 {isDropdownOpen && (
                   <ul className="absolute top-12 left-0 bg-white shadow-md rounded-md w-fit text-left z-50">
                     <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link className="whitespace-nowrap" to="/services">
+                      <Link className="whitespace-nowrap" href="/services">
                         Designing
                       </Link>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link className="whitespace-nowrap" to="/services">
+                      <Link className="whitespace-nowrap" href="/services">
                         Photo Editing
                       </Link>
                     </li>
-                    {/* Add more items here */}
                   </ul>
                 )}
-              </Link>
-              <Link className={getLinkClass("/about")} to="/about">
+              </div>
+              <Link className={getLinkClass("/about")} href="/about">
                 About
               </Link>
-              <Link className={getLinkClass("/contact-us")} to="/contact-us">
+              <Link className={getLinkClass("/contact-us")} href="/contact-us">
                 Contact
               </Link>
             </ul>
@@ -110,7 +104,7 @@ const Header = () => {
       >
         <div className="py-4">
           {/* Logo */}
-          <img src="logo.jpg" alt="logo" className="w-8 h-fit" />
+          <img src="/logo.jpg" alt="logo" className="w-8 h-fit" />
         </div>
         <button
           className="text-[#2f303d] focus:outline-none"
@@ -159,28 +153,28 @@ const Header = () => {
           </button>
           <Link
             className="text-lg font-medium"
-            to="/"
+            href="/"
             onClick={closeHamburger}
           >
             Home
           </Link>
           <Link
             className="text-lg font-medium"
-            to="/services"
+            href="/services"
             onClick={closeHamburger}
           >
             Services
           </Link>
           <Link
             className="text-lg font-medium"
-            to="/about"
+            href="/about"
             onClick={closeHamburger}
           >
             About
           </Link>
           <Link
             className="text-lg font-medium"
-            to="/contact-us"
+            href="/contact-us"
             onClick={closeHamburger}
           >
             Contact

@@ -1,5 +1,6 @@
+import React from 'react'
 
-const Services = () => {
+const ServicePage = () => {
   return (
     <div className="min-h-screen w-full font-outfit">
       <img
@@ -148,7 +149,7 @@ const Services = () => {
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default Services;
+export default ServicePage
