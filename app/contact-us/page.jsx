@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 const ContactUs = () => {
@@ -27,46 +28,46 @@ const ContactUs = () => {
         <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">Contact Us</h2>
 
         <div className="space-y-6">
-{/* Address */}
-<div>
-  <h3 className="text-xl font-semibold text-gray-800">Our Office</h3>
-  <p className="text-lg text-gray-700">
-    <a
-      href="https://www.google.com/maps/search/?q=D+136,+Abul+Fazal+Enclave-I,+New+Delhi,+Delhi+110025"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-blue-500 hover:underline"
-    >
-      D 136, Abul Fazal Enclave-I, New Delhi, Delhi 110025
-    </a>
-  </p>
-</div>
+          {/* Address */}
+          <div>
+            <h3 className="text-xl font-semibold text-gray-800">Our Office</h3>
+            <p className="text-lg text-gray-700">
+              <a
+                href="https://www.google.com/maps/search/?q=D+136,+Abul+Fazal+Enclave-I,+New+Delhi,+Delhi+110025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                D 136, Abul Fazal Enclave-I, New Delhi, Delhi 110025
+              </a>
+            </p>
+          </div>
 
-{/* Phone */}
-<div>
-  <h3 className="text-xl font-semibold text-gray-800">Phone</h3>
-  <p className="text-lg text-gray-700">
-    <a
-      href="tel:+919718013213"
-      className="text-blue-500 hover:underline"
-    >
-      +91 9718013213
-    </a>
-  </p>
-</div>
+          {/* Phone */}
+          <div>
+            <h3 className="text-xl font-semibold text-gray-800">Phone</h3>
+            <p className="text-lg text-gray-700">
+              <a
+                href="tel:+919718013213"
+                className="text-blue-500 hover:underline"
+              >
+                +91 9718013213
+              </a>
+            </p>
+          </div>
 
-{/* Email */}
-<div>
-  <h3 className="text-xl font-semibold text-gray-800">Email</h3>
-  <p className="text-lg text-gray-700">
-    <a
-      href="mailto:info@mediapitch.in"
-      className="text-blue-500 hover:underline"
-    >
-      info@mediapitch.in
-    </a>
-  </p>
-</div>
+          {/* Email */}
+          <div>
+            <h3 className="text-xl font-semibold text-gray-800">Email</h3>
+            <p className="text-lg text-gray-700">
+              <a
+                href="mailto:info@mediapitch.in"
+                className="text-blue-500 hover:underline"
+              >
+                info@mediapitch.in
+              </a>
+            </p>
+          </div>
 
 
 
@@ -142,3 +143,4 @@ const ContactUs = () => {
 };
 
 export default ContactUs;
+

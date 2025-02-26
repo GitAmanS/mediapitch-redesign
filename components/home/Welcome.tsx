@@ -1,6 +1,4 @@
 import React from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 import SwishCarousel from "./SwishCarousal";
 
 const Welcome = () => {
