@@ -1,5 +1,4 @@
 import React from 'react';
-import type Home from '~/routes/home';
 
 const  Homebackground = () => {
   return (

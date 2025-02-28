@@ -8,7 +8,7 @@ const ServicePage = () => {
         alt="Background"
         className="fixed inset-0 w-full h-full object-cover object-center"
       />
-      <section className="relative z-10 bg-transparent text-white md:pt-16">
+      <section className="relative z-10 bg-transparent text-white ">
         <div className="w-full mx-auto text-center h-1/2 bg-black/50 text-white py-16 md:py-28 px-6 md:px-20">
           <h1 className="text-4xl md:text-5xl font-[300] mb-6">Services</h1>
         </div>

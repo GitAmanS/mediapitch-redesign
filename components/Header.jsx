@@ -27,9 +27,14 @@ const Header = () => {
   };
 
   const getLinkClass = (path) => {
-    const baseClass = "py-5 hover:text-[#1E429B] transition-colors";
-    return pathname === path ? `${baseClass} text-[#1E429B]` : baseClass;
+    const baseClass = "transition-colors py-1 px-3";
+    if (pathname === path) {
+      return `${baseClass} text-white bg-blue-600  rounded-full`; // Removed px-3 to prevent width change
+    }
+    return `${baseClass} hover:text-blue-600`;
   };
+
+  const isServicesActive = pathname.startsWith("/services");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,8 +49,8 @@ const Header = () => {
     <>
       {/* Desktop Header */}
       <div
-        className={`fixed z-40 text-[#2f303d] font-outfit items-center flex flex-row justify-between w-full md:px-20 transition-colors duration-300 hidden md:flex ${
-          isScrolled ? "bg-[#F4F9FB]" : "bg-transparent"
+        className={`fixed z-40 text-gray-800 font-outfit items-center flex flex-row justify-between w-full md:px-20 transition-colors duration-300 hidden md:flex ${
+          isScrolled ? "bg-gray-100 text-gray-800" : "bg-transparent text-white"
         }`}
       >
         <div className="flex items-center md:space-x-12">
@@ -54,18 +59,30 @@ const Header = () => {
             <img src="/logo.jpg" alt="logo" className="w-8 h-fit" />
           </div>
           <nav>
-            <ul className="flex text-[16px] space-x-10 mr-auto font-[300] pb-1">
-              <Link className={getLinkClass("/")} href="/">
-                Home
-              </Link>
-              <div
-                className="relative py-5"
-                onMouseEnter={() => setIsDropdownOpen(true)}
-                onMouseLeave={() => setIsDropdownOpen(false)}
+            <ul className="flex text-[20px] space-x-4 mr-auto font-[500] items-center">
+              <li>
+                <Link className={getLinkClass("/")} href="/">
+                  Home
+                </Link>
+              </li>
+              <li
+                className="relative"
+                onMouseEnter={toggleDropdown}
+                onMouseLeave={closeDropdown}
               >
-                <button className="focus:outline-none">Services</button>
+                <button
+                  href="/services"
+                  className={`focus:outline-none py-1 hover:text-blue-600 px-3 transition-colors ${
+                    isServicesActive
+                      ? "text-white bg-blue-600  rounded-full hover:text-white" // Removed px-3
+                      : ""
+
+                  }`}
+                >
+                  Services
+                </button>
                 {isDropdownOpen && (
-                  <ul className="absolute top-12 left-0 bg-white shadow-md rounded-md w-fit text-left z-50">
+                  <ul className="absolute text-black top-10 left-0 bg-white shadow-md rounded-md w-fit text-left z-50">
                     <li className="px-4 py-2 hover:bg-gray-100">
                       <Link className="whitespace-nowrap" href="/services">
                         Designing
@@ -78,19 +95,18 @@ const Header = () => {
                     </li>
                   </ul>
                 )}
-              </div>
-              <Link className={getLinkClass("/about")} href="/about">
-                About
-              </Link>
-              <Link className={getLinkClass("/contact-us")} href="/contact-us">
-                Contact
-              </Link>
+              </li>
+              <li>
+                <Link className={getLinkClass("/about")} href="/about">
+                  About
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>
 
-        <div className="pb-1">
-          <button className="bg-[#1E429B] text-white px-6 rounded-full pt-0.5 py-1.5">
+        <div>
+          <button className="bg-blue-600 text-white px-6 rounded-full py-2">
             Contact
           </button>
         </div>
@@ -152,28 +168,36 @@ const Header = () => {
             </svg>
           </button>
           <Link
-            className="text-lg font-medium"
+            className={`text-lg font-medium ${
+              pathname === "/" ? "text-[#1E429B]" : "hover:text-[#1E429B]"
+            }`}
             href="/"
             onClick={closeHamburger}
           >
             Home
           </Link>
           <Link
-            className="text-lg font-medium"
+            className={`text-lg font-medium ${
+              isServicesActive ? "text-[#1E429B]" : "hover:text-[#1E429B]"
+            }`}
             href="/services"
             onClick={closeHamburger}
           >
             Services
           </Link>
           <Link
-            className="text-lg font-medium"
+            className={`text-lg font-medium ${
+              pathname === "/about" ? "text-[#1E429B]" : "hover:text-[#1E429B]"
+            }`}
             href="/about"
             onClick={closeHamburger}
           >
             About
           </Link>
           <Link
-            className="text-lg font-medium"
+            className={`text-lg font-medium ${
+              pathname === "/contact-us" ? "text-[#1E429B]" : "hover:text-[#1E429B]"
+            }`}
             href="/contact-us"
             onClick={closeHamburger}
           >
