@@ -13,21 +13,21 @@ const ContactUs = () => {
     message: initialMessage,
   });
 
-  const serviceTemplates = {
-    designing: "I'm interested in your graphic design services...",
-    editing: "I need help with photo editing services...",
-    writing: "I'm looking for professional content writing services...",
-    strategy: "I want to discuss digital marketing strategy...",
-  };
+  // const serviceTemplates = {
+  //   designing: "I'm interested in your graphic design services...",
+  //   editing: "I need help with photo editing services...",
+  //   writing: "I'm looking for professional content writing services...",
+  //   strategy: "I want to discuss digital marketing strategy...",
+  // };
 
   useEffect(() => {
-    if (service && serviceTemplates[service]) {
+    if (service) {
       setFormData(prev => ({
         ...prev,
-        message: serviceTemplates[service]
+        message: `I'm interested in your ${service} services...`,
       }));
     }
-  }, [service]);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({

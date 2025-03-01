@@ -14,7 +14,7 @@ const Welcome = () => {
         </h1>
         
         <h2 className="text-xl md:text-2xl tracking-normal font-semibold text-center md:text-left text-gray-700">
-          Design • Edit • Develop<br className="md:hidden" /> 
+          Design • Edit • Develop<br/> 
           Manage • Optimize • Grow
         </h2>
         
