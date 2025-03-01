@@ -14,7 +14,7 @@ const Header = () => {
 
   const services = Object.keys(data).map((key) => ({
     name: data[key].editingTitle,
-    href: `/services/${key}`,
+    href: `/service?service=${key}`,
     image: data[key].pageImage
   }));
 

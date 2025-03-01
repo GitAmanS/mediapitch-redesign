@@ -1,19 +1,19 @@
 "use client";
-
-import React, { useState, useEffect } from "react";
-import { useParams, useRouter } from "next/navigation";
-import data from "../../../utils/data.json";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
+import data from "../../utils/data.json";
 
 const ServiceDetailPage = () => {
-  const { slug } = useParams();
+  const searchParams = useSearchParams();
   const router = useRouter();
+  const serviceKey = searchParams.get("service") || "";
   const [service, setService] = useState(null);
 
   useEffect(() => {
-    if (slug && data[slug]) {
-      setService(data[slug]);
+    if (serviceKey && data[serviceKey]) {
+      setService(data[serviceKey]);
     }
-  }, [slug]);
+  }, [serviceKey]);
 
   if (!service) {
     return (
@@ -24,7 +24,7 @@ const ServiceDetailPage = () => {
   }
 
   const handleGetQuote = () => {
-    router.push(`/contact-us?service=${slug}`);
+    router.push(`/contact-us?service=${serviceKey}`);
   };
 
   return (
@@ -54,7 +54,7 @@ const ServiceDetailPage = () => {
             <div
               key={index}
               className="p-6 mb-6 rounded-xl shadow-lg bg-white flex flex-col items-center text-center border-l-4 border-gray-300"
-              style={{ borderColor: item.color ? item.color : "#ccc" }}
+              style={{ borderColor: item.color || "#ccc" }}
             >
               <img
                 src={`https://mediapitch.in/${item.image}`}
@@ -74,7 +74,6 @@ const ServiceDetailPage = () => {
           />
         </div>
 
-        {/* "Get a Quote" Button */}
         <div className="mt-10 text-center">
           <button
             onClick={handleGetQuote}
@@ -88,4 +87,12 @@ const ServiceDetailPage = () => {
   );
 };
 
-export default ServiceDetailPage;
+const Service = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ServiceDetailPage />
+    </Suspense>
+  );
+};
+
+export default Service;
