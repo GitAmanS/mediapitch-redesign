@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
@@ -10,56 +10,48 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+  const services = [
+    { name: "Designing", href: "/services#designing" },
+    { name: "Photo Editing", href: "/services#editing" },
+  ];
 
-  const closeDropdown = () => {
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
+  const closeDropdown = () => setIsDropdownOpen(false);
+  const toggleHamburger = () => setIsHamburgerOpen(!isHamburgerOpen);
+  const closeAll = () => {
+    setIsHamburgerOpen(false);
     setIsDropdownOpen(false);
   };
 
-  const toggleHamburger = () => {
-    setIsHamburgerOpen(!isHamburgerOpen);
-  };
-
-  const closeHamburger = () => {
-    setIsHamburgerOpen(false);
-  };
-
   const getLinkClass = (path) => {
-    const baseClass = "transition-colors py-1 px-3";
+    const baseClass = "transition-all duration-300 px-4 py-2 font-medium";
     if (pathname === path) {
-      return `${baseClass} text-white bg-blue-600  rounded-full`; // Removed px-3 to prevent width change
+      return `${baseClass} text-white bg-blue-600 rounded-full`;
     }
-    return `${baseClass} hover:text-blue-600`;
+    return `${baseClass} ${isScrolled ? "text-gray-800 hover:text-blue-600" : "text-white hover:text-blue-200"}`;
   };
 
   const isServicesActive = pathname.startsWith("/services");
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
-      {/* Desktop Header */}
       <div
-        className={`fixed z-40 text-gray-800 font-outfit items-center flex flex-row justify-between w-full md:px-20 transition-colors duration-300 hidden md:flex ${
-          isScrolled ? "bg-gray-100 text-gray-800" : "bg-transparent text-white"
+        className={`fixed z-40 font-outfit items-center flex flex-row justify-between w-full md:px-20 transition-all duration-300 hidden md:flex ${
+          isScrolled ? "bg-white shadow-md py-3" : "py-5"
         }`}
       >
-        <div className="flex items-center md:space-x-12">
-          <div className="py-5">
-            {/* Logo */}
-            <img src="/logo.jpg" alt="logo" className="w-8 h-fit" />
-          </div>
+        <div className="flex items-center space-x-12">
+          <Link href="/" className="flex items-center">
+            <Image height={50} width={50} src="/logo.png" alt="logo" className="w-10 h-10 " />
+          </Link>
           <nav>
-            <ul className="flex text-[20px] space-x-4 mr-auto font-[500] items-center">
+            <ul className="flex space-x-6 items-center">
               <li>
                 <Link className={getLinkClass("/")} href="/">
                   Home
@@ -70,29 +62,42 @@ const Header = () => {
                 onMouseEnter={toggleDropdown}
                 onMouseLeave={closeDropdown}
               >
-                <button
+                <Link
                   href="/services"
-                  className={`focus:outline-none py-1 hover:text-blue-600 px-3 transition-colors ${
-                    isServicesActive
-                      ? "text-white bg-blue-600  rounded-full hover:text-white" // Removed px-3
-                      : ""
-
+                  className={`${getLinkClass("/services")} flex items-center gap-1 ${
+                    isServicesActive ? "!bg-blue-700" : ""
                   }`}
                 >
                   Services
-                </button>
+                  <svg
+                    className={`w-4 h-4 transition-transform ${
+                      isDropdownOpen ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </Link>
                 {isDropdownOpen && (
-                  <ul className="absolute text-black top-10 left-0 bg-white shadow-md rounded-md w-fit text-left z-50">
-                    <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link className="whitespace-nowrap" href="/services">
-                        Designing
-                      </Link>
-                    </li>
-                    <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link className="whitespace-nowrap" href="/services">
-                        Photo Editing
-                      </Link>
-                    </li>
+                  <ul className="absolute top-full left-0 bg-white shadow-xl rounded-lg py-2 min-w-[200px]">
+                    {services.map((service) => (
+                      <li key={service.name}>
+                        <Link
+                          href={service.href}
+                          className="px-6 py-3 block hover:bg-blue-50 text-gray-800 hover:text-blue-600 transition-colors"
+                          onClick={closeDropdown}
+                        >
+                          {service.name}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 )}
               </li>
@@ -105,106 +110,100 @@ const Header = () => {
           </nav>
         </div>
 
-        <div>
-          <button className="bg-blue-600 text-white px-6 rounded-full py-2">
-            Contact
-          </button>
-        </div>
+        <Link
+          href="/contact-us"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-medium transition-colors shadow-lg"
+        >
+          Contact
+        </Link>
       </div>
 
-      {/* Mobile Header */}
       <div
-        className={`fixed z-40 text-[#2f303d] font-outfit flex items-center justify-between w-full px-4 transition-colors duration-300 md:hidden ${
-          isScrolled ? "bg-[#F4F9FB]" : "bg-transparent"
+        className={`fixed z-40 w-full md:hidden transition-colors duration-300 ${
+          isScrolled ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="py-4">
-          {/* Logo */}
-          <img src="/logo.jpg" alt="logo" className="w-8 h-fit" />
-        </div>
-        <button
-          className="text-[#2f303d] focus:outline-none"
-          onClick={toggleHamburger}
-        >
-          {/* Hamburger Icon */}
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d={isHamburgerOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-            ></path>
-          </svg>
-        </button>
-      </div>
-
-      {/* Hamburger Menu */}
-      {isHamburgerOpen && (
-        <div className="fixed font-outfit top-0 left-0 w-full h-full bg-[#F4F9FB] z-50 flex flex-col items-center md:space-y-6 pt-20">
-          {/* Close Button */}
+        <div className="flex items-center justify-between px-5 py-4">
+          <Link href="/">
+            <img
+              src="/logo.jpg"
+              alt="logo"
+              className="w-10 h-10 rounded-full border-2 border-white"
+            />
+          </Link>
+          
           <button
-            className="absolute top-4 right-4 text-[#2f303d] focus:outline-none"
-            onClick={closeHamburger}
+            onClick={toggleHamburger}
+            className="p-2 rounded-full bg-white/20 backdrop-blur-sm"
           >
             <svg
-              className="w-6 h-6"
+              className="w-7 h-7"
               fill="none"
-              stroke="currentColor"
+              stroke={isScrolled ? "#1E429B" : "white"}
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              ></path>
+                d={isHamburgerOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+              />
             </svg>
           </button>
-          <Link
-            className={`text-lg font-medium ${
-              pathname === "/" ? "text-[#1E429B]" : "hover:text-[#1E429B]"
-            }`}
-            href="/"
-            onClick={closeHamburger}
-          >
-            Home
-          </Link>
-          <Link
-            className={`text-lg font-medium ${
-              isServicesActive ? "text-[#1E429B]" : "hover:text-[#1E429B]"
-            }`}
-            href="/services"
-            onClick={closeHamburger}
-          >
-            Services
-          </Link>
-          <Link
-            className={`text-lg font-medium ${
-              pathname === "/about" ? "text-[#1E429B]" : "hover:text-[#1E429B]"
-            }`}
-            href="/about"
-            onClick={closeHamburger}
-          >
-            About
-          </Link>
-          <Link
-            className={`text-lg font-medium ${
-              pathname === "/contact-us" ? "text-[#1E429B]" : "hover:text-[#1E429B]"
-            }`}
-            href="/contact-us"
-            onClick={closeHamburger}
-          >
-            Contact
-          </Link>
         </div>
-      )}
+
+        {isHamburgerOpen && (
+          <div className="absolute top-full w-full bg-white shadow-xl border-t border-gray-100">
+            <div className="px-5 py-4 space-y-4">
+              <Link
+                href="/"
+                onClick={closeAll}
+                className="block py-3 px-4 text-gray-800 hover:bg-blue-50 rounded-lg font-medium"
+              >
+                Home
+              </Link>
+              
+              <div className="space-y-2">
+                <Link
+                  href="/services"
+                  onClick={closeAll}
+                  className="block py-3 px-4 text-gray-800 hover:bg-blue-50 rounded-lg font-medium"
+                >
+                  Services
+                </Link>
+                <div className="pl-6 space-y-2">
+                  {services.map((service) => (
+                    <Link
+                      key={service.name}
+                      href={service.href}
+                      onClick={closeAll}
+                      className="block py-2 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg"
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <Link
+                href="/about"
+                onClick={closeAll}
+                className="block py-3 px-4 text-gray-800 hover:bg-blue-50 rounded-lg font-medium"
+              >
+                About
+              </Link>
+              
+              <Link
+                href="/contact-us"
+                onClick={closeAll}
+                className="block py-3 px-4 bg-blue-600 text-white rounded-lg font-medium text-center hover:bg-blue-700"
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        )}
+      </div>
     </>
   );
 };

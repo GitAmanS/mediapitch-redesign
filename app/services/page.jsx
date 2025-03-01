@@ -2,28 +2,38 @@ import React from 'react'
 
 const ServicePage = () => {
   return (
-    <div className="min-h-screen w-full font-outfit">
-      <img
-        src="storytelling.jpg"
-        alt="Background"
-        className="fixed inset-0 w-full h-full object-cover object-center"
-      />
-      <section className="relative z-10 bg-transparent text-white ">
-        <div className="w-full mx-auto text-center h-1/2 bg-black/50 text-white py-16 md:py-28 px-6 md:px-20">
-          <h1 className="text-4xl md:text-5xl font-[300] mb-6">Services</h1>
+    <div className="min-h-screen w-full font-outfit bg-gray-50">
+      {/* Hero Section */}
+      <section className="relative h-[60vh] bg-gray-900 text-white overflow-hidden">
+        <img
+          src="storytelling.jpg"
+          alt="Background"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-70"
+        />
+        <div className="relative z-10 h-full flex items-center justify-center bg-black/40">
+          <div className="max-w-4xl px-4 text-center">
+            <h1 className="text-5xl md:text-6xl font-light mb-6 animate-fade-in">
+              Our Services
+            </h1>
+            <p className="text-xl md:text-2xl font-light opacity-90 animate-slide-up">
+              Crafting words that resonate and inspire action
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="relative z-10 bg-transparent h-full">
-        <div className="w-full mx-auto h-full bg-white text-black py-12 md:py-16 px-6 md:px-20">
-          <div className="w-full flex flex-col md:flex-row">
-            <div className="w-full mb-6 md:mb-0">
-              <h1 className="text-4xl md:text-5xl font-[500] mb-6">
-                Editing Writing & Rewriting
-              </h1>
+      {/* Main Content */}
+      <main className="relative z-10 -mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Intro Section */}
+        <section className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-16">
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-medium mb-6 text-gray-900">
+                Editing, Writing & Rewriting
+              </h2>
             </div>
-            <div className="w-full">
-              <p className="text-lg md:text-2xl font-[200]">
+            <div>
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                 Our team of skilled editors, writers, and rewriters is here to
                 elevate your content and make it shine. Whether you need precise
                 editing, captivating writing, or refreshing rewriting, we've got
@@ -31,125 +41,74 @@ const ServicePage = () => {
               </p>
             </div>
           </div>
+        </section>
 
-          {/* Timely Delivery Section */}
-          <div className="w-full flex flex-col md:flex-row md:space-x-4 my-12">
-            <div className="w-full mb-6 md:mb-0">
-              <img
-                src="time.jpg"
-                alt="Timely Delivery"
-                className="w-full rounded-tl-[200px] rounded-br-[200px] h-auto object-cover object-center"
-              />
-            </div>
-            <div className="w-full">
-              <h1 className="text-2xl font-[500] mb-6">Timely Delivery</h1>
-              <p className="text-xl md:text-2xl font-[200]">
-                We understand the importance of deadlines. When you work with
-                Media Pitch, you can expect timely delivery without compromising
-                on quality. We'll ensure your content is ready when you need it.
-              </p>
-            </div>
-          </div>
-
-          {/* Fresh Section */}
-          <div className="w-full flex flex-col md:flex-row md:space-x-4 my-12">
-            <div className="w-full text-end mb-6 md:mb-0">
-              <h1 className="text-2xl font-[500] mb-6">Fresh</h1>
-              <p className="text-xl md:text-2xl font-[200]">
-                Sometimes, all you need is a fresh perspective. Our rewriters
-                will take your existing content and transform it into something
-                new and exciting. We'll breathe new life into your words,
-                enhancing their effectiveness and appeal.
-              </p>
-            </div>
-            <div className="w-full">
-              <img
-                src="fresh.jpg"
-                alt="Fresh Content"
-                className="w-full rounded-tr-[200px] rounded-bl-[200px] h-auto object-cover object-center"
-              />
-            </div>
-          </div>
-
-          {/* Expertise Section */}
-          <div className="w-full flex flex-col md:flex-row md:space-x-4 my-12">
-            <div className="w-full mb-6 md:mb-0">
-              <h1 className="text-2xl font-[500] mb-6">Expertise that makes a difference</h1>
-              <p className="text-xl md:text-2xl font-[200]">
-                We understand the importance of deadlines. When you work with
-                Media Pitch, you can expect timely delivery without compromising
-                on quality. We'll ensure your content is ready when you need it.
-              </p>
-            </div>
-            <div className="w-full">
-              <img
-                src="expertise.jpg"
-                alt="Expertise"
-                className="w-full rounded-tl-[200px] rounded-br-[200px] h-auto object-cover object-center"
-              />
-            </div>
-          </div>
-
-          {/* Confidentiality Section */}
-          <div className="w-full flex flex-col md:flex-row md:space-x-4 my-12">
-            <div className="w-full mb-6 md:mb-0">
-              <h1 className="text-2xl font-[500] mb-6">Confidentiality and Professionalism</h1>
-              <p className="text-xl md:text-2xl font-[200]">
-                We understand the importance of deadlines. When you work with
-                Media Pitch, you can expect timely delivery without compromising
-                on quality. We'll ensure your content is ready when you need it.
-              </p>
-            </div>
-            <div className="w-full">
-              <img
-                src="confidentiality.jpg"
-                alt="Confidentiality"
-                className="w-full rounded-tl-[200px] rounded-br-[200px] h-auto object-cover object-center"
-              />
-            </div>
-          </div>
-
-          {/* Captivating Storytelling Section */}
-          <div className="w-full flex flex-col md:flex-row md:space-x-4 my-12">
-            <div className="w-full mb-6 md:mb-0">
-              <h1 className="text-2xl font-[500] mb-6">Captivating Storytelling</h1>
-              <p className="text-xl md:text-2xl font-[200]">
-                We understand the importance of deadlines. When you work with
-                Media Pitch, you can expect timely delivery without compromising
-                on quality. We'll ensure your content is ready when you need it.
-              </p>
-            </div>
-            <div className="w-full">
-              <img
-                src="storytelling.jpg"
-                alt="Storytelling"
-                className="w-full rounded-tl-[200px] rounded-br-[200px] h-auto object-cover object-center"
-              />
-            </div>
-          </div>
-
-          {/* Tailored to Perfection Section */}
-          <div className="w-full flex flex-col md:flex-row md:space-x-4 my-12">
-            <div className="w-full mb-6 md:mb-0">
-              <h1 className="text-2xl font-[500] mb-6">Tailored to Perfection</h1>
-              <p className="text-xl md:text-2xl font-[200]">
-                We understand the importance of deadlines. When you work with
-                Media Pitch, you can expect timely delivery without compromising
-                on quality. We'll ensure your content is ready when you need it.
-              </p>
-            </div>
-            <div className="w-full">
-              <img
-                src="services.jpg"
-                alt="Tailored Services"
-                className="w-full rounded-tl-[200px] rounded-br-[200px] h-auto object-cover object-center"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+        {/* Service Sections */}
+        {services.map((service, index) => (
+          <ServiceSection
+            key={service.title}
+            {...service}
+            reverse={index % 2 !== 0}
+          />
+        ))}
+      </main>
     </div>
   )
 }
+
+const ServiceSection = ({ title, text, image, reverse }) => (
+  <section className={`mb-16 grid md:grid-cols-2 gap-8 items-center ${reverse ? 'md:flex-row-reverse' : ''}`}>
+    <div className={`relative group ${reverse ? 'md:order-2' : ''}`}>
+      <img
+        src={image}
+        alt={title}
+        className="w-full h-80 object-cover rounded-3xl transform transition-all duration-500 group-hover:scale-105 shadow-lg"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-3xl" />
+    </div>
+    
+    <div className={`p-6 ${reverse ? 'md:pr-12' : 'md:pl-12'}`}>
+      <h3 className="text-3xl font-medium mb-6 text-gray-900">
+        {title}
+      </h3>
+      <p className="text-lg text-gray-600 leading-relaxed">
+        {text}
+      </p>
+    </div>
+  </section>
+)
+
+const services = [
+  {
+    title: 'Timely Delivery',
+    text: 'We prioritize your deadlines while maintaining exceptional quality standards. Your content will always arrive polished and ready for deployment.',
+    image: 'time.jpg'
+  },
+  {
+    title: 'Fresh Perspectives',
+    text: 'Our creative team revitalizes existing content with innovative approaches, ensuring your message stays relevant and engaging.',
+    image: 'fresh.jpg',
+  },
+  {
+    title: 'Industry Expertise',
+    text: 'Benefit from our specialized knowledge across multiple sectors, guaranteeing content that resonates with your target audience.',
+    image: 'expertise.jpg'
+  },
+  {
+    title: 'Secure Collaboration',
+    text: 'Your intellectual property remains protected through our strict confidentiality protocols and professional handling.',
+    image: 'confidentiality.jpg'
+  },
+  {
+    title: 'Strategic Storytelling',
+    text: 'We craft narratives that connect emotionally while driving measurable business results.',
+    image: 'storytelling.jpg'
+  },
+  {
+    title: 'Custom Solutions',
+    text: 'Receive fully customized content strategies tailored to your specific business objectives and brand voice.',
+    image: 'services.jpg'
+  }
+]
 
 export default ServicePage

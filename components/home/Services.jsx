@@ -8,10 +8,10 @@ const Services = () => {
                 Welcome to Media Pitch, <br /> one-stop solution for all your media-related needs.
             </h1>
 
-            <div className='flex flex-col px-4 md:px-28'>
+            <div className='flex flex-col px-4 '>
 
                 <div className='flex flex-col md:flex-row'>
-                    <div className='flex flex-col w-full md:w-[30%]  pt-16 space-y-3'>
+                    <div className='flex flex-col w-full md:w-1/2 md:mr-auto  pt-16 space-y-3'>
                         <h1 className='text-3xl text-start font-[500]'>
                             Website Designing
 
@@ -39,7 +39,7 @@ const Services = () => {
                             className='w-full h-fit' />
                     </div>
 
-                    <div className='flex flex-col w-full md:w-[30%]  pt-16 space-y-3'>
+                    <div className='flex flex-col w-full md:w-1/2  pt-16 space-y-3'>
                         <h1 className='text-3xl text-start font-[500]'>
                         Designing (Print)
 
@@ -53,7 +53,7 @@ const Services = () => {
 
 
                 <div className='flex flex-col md:flex-row'>
-                    <div className='flex flex-col w-full md:w-[30%]  pt-16 space-y-3'>
+                    <div className='flex flex-col w-full md:w-1/2  pt-16 space-y-3'>
                         <h1 className='text-3xl text-start font-[500]'>
                         Social Media
 
@@ -81,7 +81,7 @@ const Services = () => {
                             className='w-full h-fit' />
                     </div>
 
-                    <div className='flex flex-col w-full md:w-[30%]  pt-16 space-y-3'>
+                    <div className='flex flex-col w-full md:w-1/2  pt-16 space-y-3'>
                         <h1 className='text-3xl text-start font-[500]'>
                         Editing Writing & Rewriting
 
@@ -94,7 +94,7 @@ const Services = () => {
 
 
                 <div className='flex flex-col md:flex-row'>
-                    <div className='flex flex-col w-full md:w-[30%]  pt-16 space-y-3'>
+                    <div className='flex flex-col w-full md:w-1/2  pt-16 space-y-3'>
                         <h1 className='text-3xl text-start font-[500]'>
                         Photo Editing
 
@@ -122,7 +122,7 @@ const Services = () => {
                             className='w-full h-fit' />
                     </div>
 
-                    <div className='flex flex-col w-full md:w-[30%]  pt-16 space-y-3'>
+                    <div className='flex flex-col w-full md:w-1/2  pt-16 space-y-3'>
                         <h1 className='text-3xl text-start font-[500]'>
                         App Development
 
@@ -135,7 +135,7 @@ const Services = () => {
 
 
                 <div className='flex flex-col md:flex-row'>
-                    <div className='flex flex-col w-full md:w-[30%]  pt-16 space-y-3'>
+                    <div className='flex flex-col w-full md:w-1/2  pt-16 space-y-3'>
                         <h1 className='text-3xl text-start font-[500]'>
                         Cloud Infrastructure
 

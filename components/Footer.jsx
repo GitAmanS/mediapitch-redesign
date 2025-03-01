@@ -3,81 +3,78 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
+
 const Footer = () => {
   return (
     <div
-      className="flex w-full justfiy-center items-center flex-col min-h-[85vh] px-4 md:px-20 font-outfit relative bg-cover bg-no-repeat"
+      className="flex w-full justify-center items-center flex-col min-h-[85vh] px-6 md:px-20 font-outfit relative bg-cover bg-no-repeat"
       style={{
         backgroundImage: "url('wavebackground.png')",
         backgroundPosition: "bottom",
       }}
     >
-      <div className="flex h-full space-y-4 md:space-y-0  md:space-x-20  py-8  justify-between flex-col md:flex-row">
-        <div className="flex-col mt-auto h-fit w-full text-xs font-[400]  text-[#022a4e]">
-          <div className="h-full py-4">
-            <img src="logo.jpg" alt="logo" className="w-1/2 h-fit" />
+      <div className="flex flex-col md:flex-row justify-between w-full py-8 gap-6 md:gap-20">
+        <div className="flex flex-col w-full text-sm font-medium text-[#022a4e]">
+          <div className="py-4">
+            <img src="logo.png" alt="logo" className="w-1/2 h-auto" />
           </div>
-          <div className="flex flex-col space-y-4  h-full">
-            <p className=""> App Development </p>
-            <p className=""> Web Development </p>
-            <p className=""> Social Media </p>
-            <p className=""> Digital Marketing </p>
-            <p className=""> Graphic Design </p>
-          </div>
-        </div>
-
-        <div className="flex-col w-full text-xs font-[400]  text-[#022a4e]">
-          <h1 className="font-[400] text-lg py-4">Resources</h1>
-          <div className="flex flex-col space-y-4 mt-auto h-full">
-            <p className=""> App Development </p>
-            <p className=""> Web Development </p>
-            <p className=""> Social Media </p>
-            <p className=""> Digital Marketing </p>
-            <p className=""> Graphic Design </p>
+          <div className="flex flex-col space-y-3">
+            <p>App Development</p>
+            <p>Web Development</p>
+            <p>Social Media</p>
+            <p>Digital Marketing</p>
+            <p>Graphic Design</p>
           </div>
         </div>
 
-        <div className="flex-col h-full w-full text-xs font-[400] text-[#022a4e]">
-          <h1 className="font-[400] h-full mt-auto text-lg py-4">Contact</h1>
-          <div className="flex flex-col space-y-4 mt-auto h-full">
-            <p className=""> Web Development </p>
-            <p className=""> Social Media </p>
-            <p className=""> Digital Marketing </p>
-            <p className=""> Graphic Design </p>
+        <div className="flex flex-col w-full text-sm font-medium text-[#022a4e]">
+          <h1 className="text-xl md:text-2xl font-semibold py-4">Resources</h1>
+          <div className="flex flex-col space-y-3">
+            <p>App Development</p>
+            <p>Web Development</p>
+            <p>Social Media</p>
+            <p>Digital Marketing</p>
+            <p>Graphic Design</p>
           </div>
         </div>
 
-        <div className="flex-col h-full w-full text-xs font-[400]  text-[#022a4e]">
-          <h1 className="font-[400] text-lg py-4 h-full">Find Us on Social</h1>
-          <div className="flex flex-col space-y-4 mt-auto h-full">
-            <div className="flex space-x-2 flex-row">
-              <div className="bg-[#022A4E] p-1.5 rounded-full">
-                <FaFacebookF className="text-white " />
-              </div>
-              <div className="bg-[#022A4E] p-1.5 rounded-full">
-                <FaXTwitter className="text-white " />
-              </div>
-              <div className="bg-[#022A4E] p-1.5 rounded-full">
-                <FaInstagram className="text-white " />
-              </div>
-              <div className="bg-[#022A4E] p-1.5 rounded-full">
-                <FaLinkedinIn className="text-white " />
-              </div>
+        <div className="flex flex-col w-full text-sm font-medium text-[#022a4e]">
+          <h1 className="text-xl md:text-2xl font-semibold py-4">Services</h1>
+          <div className="flex flex-col space-y-3">
+            <p>Web Development</p>
+            <p>Social Media</p>
+            <p>Digital Marketing</p>
+            <p>Graphic Design</p>
+          </div>
+        </div>
+
+        <div className="flex flex-col w-full text-sm font-medium text-[#022a4e]">
+          <h1 className="text-xl md:text-2xl font-semibold py-4">Find Us on Social</h1>
+          <div className="flex space-x-3">
+            <div className="bg-[#022A4E] p-2 rounded-full">
+              <FaFacebookF className="text-white text-lg" />
+            </div>
+            <div className="bg-[#022A4E] p-2 rounded-full">
+              <FaXTwitter className="text-white text-lg" />
+            </div>
+            <div className="bg-[#022A4E] p-2 rounded-full">
+              <FaInstagram className="text-white text-lg" />
+            </div>
+            <div className="bg-[#022A4E] p-2 rounded-full">
+              <FaLinkedinIn className="text-white text-lg" />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="w-full flex flex-col md:flex-row mt-auto pb-8">
-        <div className="w-full">
-          <p className="text-xs text-grey-300">
-            Privacy & Cookies Policy <br />
-            © 2025. All rights reserved. <br />
-            Trademarks & photos are the property of their respective owners.
-          </p>
+      <div className="w-full flex flex-col md:flex-row justify-between items-center mt-8 pb-6 text-sm text-gray-600">
+        <div className="text-center md:text-left">
+          <p>Privacy & Cookies Policy</p>
+          <p>© 2025. All rights reserved.</p>
+          <p>Trademarks & photos are the property of their respective owners.</p>
         </div>
 
-        <div className="flex flex-col md:flex-row w-full md:space-x-8 text-xs md:place-items-end justify-end">
+        <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-center md:text-right">
           <p>Data Protection Policy</p>
           <p>Terms of Service</p>
           <p>Privacy Policy</p>
