@@ -144,7 +144,6 @@ const Header = () => {
         </Link>
       </div>
 
-      {/* Mobile Navigation */}
       <div
         className={`fixed z-40 w-full md:hidden transition-colors duration-300 ${
           isScrolled ? "bg-white shadow-md" : "bg-transparent"
@@ -153,7 +152,7 @@ const Header = () => {
         <div className="flex items-center justify-between px-5 py-4">
           <Link href="/">
             <img
-              src="/logo.jpg"
+              src="/logo.png"
               alt="logo"
               className="w-10 h-10 rounded-full border-2 border-white"
             />
