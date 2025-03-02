@@ -4,8 +4,8 @@ import { useSearchParams } from "next/navigation";
 
 const ContactForm = () => {
   const searchParams = useSearchParams();
-  const initialMessage = searchParams.get('message') || "";
-  const service = searchParams.get('service') || "";
+  const initialMessage = searchParams.get("message") || "";
+  const service = searchParams.get("service") || "";
 
   const [formData, setFormData] = useState({
     name: "",
@@ -15,7 +15,7 @@ const ContactForm = () => {
 
   useEffect(() => {
     if (service) {
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
         message: `I'm interested in your ${service} services...`,
       }));
@@ -37,8 +37,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="min-h-screen font-outfit bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mt-8 mx-auto">
+    <div className="min-h-screen font-outfit bg-gray-50 py-16 px-4 sm:px-6 lg:px-24">
+      <div className="flex flex-col gap-4 max-w-7xl mt-8 mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Let's Create Something Amazing
@@ -48,35 +48,47 @@ const ContactForm = () => {
           </p>
         </div>
 
+        <div className="bg-white rounded-2xl shadow-lg p-8 h-fit">
+          <iframe
+            title="Google Map"
+            className="w-full h-64 rounded-lg shadow-md"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83937477554!2d77.06889934417993!3d28.527280343579428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce31ab9421c4d%3A0x268cc9bd37038a8e!2sD%20136%2C%20Abul%20Fazal%20Enclave-I%2C%20New%20Delhi%2C%20Delhi%20110025!5e0!3m2!1sen!2sin!4v1644333123456!5m2!1sen!2sin"
+            allowFullScreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="bg-white rounded-2xl shadow-lg p-8 h-fit">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Contact Information</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+              Contact Information
+            </h2>
 
             <div className="space-y-8">
               <div className="flex items-start gap-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  📍
-                </div>
+                <div className="bg-blue-100 p-3 rounded-lg">📍</div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Office Address</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    Office Address
+                  </h3>
                   <a
                     href="https://www.google.com/maps/search/?q=D+136,+Abul+Fazal+Enclave-I,+New+Delhi,+Delhi+110025"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 underline hover:text-blue-600 transition-colors"
                   >
-                    D 136, Abul Fazal Enclave-I,<br />
+                    D 136, Abul Fazal Enclave-I,
+                    <br />
                     New Delhi, Delhi 110025
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  📞
-                </div>
+                <div className="bg-blue-100 p-3 rounded-lg">📞</div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone Number</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    Phone Number
+                  </h3>
                   <a
                     href="tel:+919718013213"
                     className="text-gray-600 underline hover:text-blue-600 transition-colors"
@@ -87,11 +99,11 @@ const ContactForm = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  📧
-                </div>
+                <div className="bg-blue-100 p-3 rounded-lg">📧</div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Address</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    Email Address
+                  </h3>
                   <a
                     href="mailto:info@mediapitch.in"
                     className="text-gray-600 underline hover:text-blue-600 transition-colors"
@@ -103,13 +115,16 @@ const ContactForm = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Send Us a Message</h2>
+          <div className="bg-white h-fit rounded-2xl shadow-lg p-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+              Send Us a Message
+            </h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Full Name
+                </label>
                 <input
                   type="text"
                   name="name"
@@ -122,7 +137,9 @@ const ContactForm = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Email Address
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -135,7 +152,9 @@ const ContactForm = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Message
+                </label>
                 <textarea
                   name="message"
                   value={formData.message}

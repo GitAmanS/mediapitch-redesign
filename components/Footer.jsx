@@ -3,6 +3,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -51,18 +52,18 @@ const Footer = () => {
         <div className="flex flex-col w-full text-sm font-medium text-[#022a4e]">
           <h1 className="text-xl md:text-2xl font-semibold py-4">Find Us on Social</h1>
           <div className="flex space-x-3">
-            <div className="bg-[#022A4E] p-2 rounded-full">
+            <Link target="_blank" href="https://www.facebook.com/mpphotoservice?locale=nl_BE" className="bg-[#022A4E] p-2 rounded-full">
               <FaFacebookF className="text-white text-lg" />
-            </div>
-            <div className="bg-[#022A4E] p-2 rounded-full">
+            </Link>
+            {/* <div className="bg-[#022A4E] p-2 rounded-full">
               <FaXTwitter className="text-white text-lg" />
             </div>
             <div className="bg-[#022A4E] p-2 rounded-full">
               <FaInstagram className="text-white text-lg" />
-            </div>
-            <div className="bg-[#022A4E] p-2 rounded-full">
+            </div> */}
+            <Link target="_blank" href="https://www.linkedin.com/company/media-pitch/" className="bg-[#022A4E] p-2 rounded-full">
               <FaLinkedinIn className="text-white text-lg" />
-            </div>
+            </Link>
           </div>
         </div>
       </div>

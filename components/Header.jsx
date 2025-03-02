@@ -165,7 +165,7 @@ const Header = () => {
             <svg
               className="w-7 h-7"
               fill="none"
-              stroke={isScrolled ? "#1E429B" : "white"}
+              stroke="#1E429B"
               viewBox="0 0 24 24"
             >
               <path

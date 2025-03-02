@@ -2,6 +2,7 @@
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import data from "../../utils/data.json";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const ServiceDetailPage = () => {
   const searchParams = useSearchParams();
@@ -29,59 +30,78 @@ const ServiceDetailPage = () => {
 
   return (
     <div className="min-h-screen w-full font-outfit bg-gray-50">
-      <section className="relative h-[50vh] bg-gray-900 text-white overflow-hidden">
-        <img
-          src={service.pageImage}
-          alt={service.editingTitle}
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-70"
-        />
-        <div className="relative z-10 h-full flex items-center justify-center bg-black/50">
-          <h1 className="text-5xl md:text-6xl font-light text-center">
+ 
+      <section className="relative h-[60vh] bg-gray-900 text-white overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={service.pageImage}
+            alt={service.editingTitle}
+            className="w-full h-full object-cover opacity-90"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-gray-900/40" />
+        </div>
+        
+        
+        <div className="relative h-full container max-w-6xl mx-auto px-4 flex items-end pb-16">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight max-w-2xl">
             {service.editingTitle}
           </h1>
         </div>
       </section>
 
-      <main className="w-full md:px-32 mx-auto p-6 mt-10 bg-white rounded-xl shadow-lg">
-        <p className="text-lg text-gray-600">{service.editingDescription}</p>
+      <main className="container max-w-6xl mx-auto px-4 py-12">
 
-        <div className="mt-10">
-          <h2 className="text-3xl font-semibold text-gray-800 text-center mb-6">
+        <p className="text-lg text-gray-600 leading-relaxed mb-16 max-w-3xl">
+          {service.editingDescription}
+        </p>
+
+        <div className="mb-20">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
             {service.circleCenterText}
           </h2>
+          <ScrollReveal>
 
-          {service.circleArray.map((item, index) => (
-            <div
-              key={index}
-              className="p-6 mb-6 rounded-xl shadow-lg bg-white flex flex-col items-center text-center border-l-4 border-gray-300"
-              style={{ borderColor: item.color || "#ccc" }}
-            >
-              <img
-                src={`https://mediapitch.in/${item.image}`}
-                alt={item.text}
-                className="w-24 h-24 rounded-full object-cover shadow-md mb-4"
-              />
-              <h3 className="text-2xl font-semibold text-gray-800">{item.text}</h3>
-              <p className="text-gray-600 text-md mt-2">{item.description}</p>
-            </div>
-          ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {service.circleArray.map((item, index) => (
+              
+              <div
+                key={index}
+                className="group p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-gray-100 p-4 shadow-inner">
+                  <img
+                    src={`https://mediapitch.in/${item.image}`}
+                    alt={item.text}
+                    className="w-full h-full rounded-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3 text-center">
+                  {item.text}
+                </h3>
+                <p className="text-gray-500 text-center leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+          </ScrollReveal>
         </div>
 
-        <div className="mt-10 text-center">
-          <p
-            className="text-lg text-gray-800"
+        <ScrollReveal>
+
+        <div className="text-center space-y-8">
+          <div
+            className="text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto"
             dangerouslySetInnerHTML={{ __html: service.finalText }}
           />
-        </div>
-
-        <div className="mt-10 text-center">
           <button
             onClick={handleGetQuote}
-            className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors"
+            className="px-10 py-4 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-300"
           >
             Get a Quote
           </button>
         </div>
+        </ScrollReveal>
       </main>
     </div>
   );
@@ -89,7 +109,11 @@ const ServiceDetailPage = () => {
 
 const Service = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-pulse">Loading service details...</div>
+      </div>
+    }>
       <ServiceDetailPage />
     </Suspense>
   );

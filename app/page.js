@@ -1,6 +1,7 @@
 import Services from "@/components/home/Services";
 import Welcome from "@/components/home/Welcome";
 import Image from "next/image";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   return (
@@ -8,7 +9,10 @@ export default function Home() {
       {/* <Welcome /> */}
 
       <div className=" w-full ">
-        <Welcome />
+      
+      <Welcome />
+      
+        
 
         <Services />
       </div>
