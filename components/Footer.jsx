@@ -29,7 +29,7 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-between w-full py-8 gap-6 md:gap-20">
         <div className="flex flex-col w-fit text-sm font-medium text-[#022a4e]">
           <div className="py-4">
-            <img src="logo.png" alt="logo" className="w-full h-auto" />
+            <img src="logo.png" alt="logo" className="w-1/2 md:w-full h-auto" />
           </div>
         </div>
 
