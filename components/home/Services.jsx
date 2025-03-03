@@ -4,13 +4,13 @@ import ScrollReveal from "../ScrollReveal";
 
 const Services = () => {
   return (
-    <div className="px-4 md:px-20  md:py-28 min-h-screen h-fit flex flex-col  font-outfit">
+    <div className="px-4 md:px-20 2xl:px-56  md:py-28 min-h-screen h-fit flex flex-col  font-outfit">
       <h1 className="text-5xl text-start font-[300]">
         Welcome to Media Pitch, <br /> one-stop solution for all your
         media-related needs.
       </h1>
 
-      <div className="flex flex-col px-4 2xl:px-80">
+      <div className="flex flex-col px-4 2xl:px-40">
         <ScrollReveal>
           <div className="flex flex-col md:flex-row">
             <div className="flex flex-col w-full md:w-1/2 md:mr-auto  pt-16 space-y-3">
@@ -28,7 +28,7 @@ const Services = () => {
             </div>
             <div className="flex flex-col w-full md:w-1/2 py-12 px-12">
               <img
-                src="services/web_design.jpg"
+                src="services/web_design.svg"
                 alt="Website Designing"
                 className="w-full h-fit"
               />
@@ -40,7 +40,7 @@ const Services = () => {
           <div className="flex flex-col md:flex-row ">
             <div className="flex flex-col ml-auto w-full md:w-1/2 py-12 px-12">
               <img
-                src="services/designing.jpg"
+                src="services/designing.svg"
                 alt="Website Designing"
                 className="w-full h-fit"
               />
@@ -76,7 +76,7 @@ const Services = () => {
             </div>
             <div className="flex flex-col w-full md:w-1/2 py-12 px-12">
               <img
-                src="services/social_media.jpg"
+                src="services/social_media.svg"
                 alt="Website Designing"
                 className="w-full h-fit"
               />
@@ -88,7 +88,7 @@ const Services = () => {
           <div className="flex flex-col md:flex-row">
             <div className="flex flex-col ml-auto w-full md:w-1/2 py-12 px-12">
               <img
-                src="services/writing.jpg"
+                src="services/editing.svg"
                 alt="Website Designing"
                 className="w-full h-fit"
               />
@@ -125,7 +125,7 @@ const Services = () => {
             </div>
             <div className="flex flex-col w-full md:w-1/2 py-12 px-12">
               <img
-                src="services/photo_editing.jpg"
+                src="services/photo_editing.svg"
                 alt="Website Designing"
                 className="w-full h-fit"
               />
@@ -137,7 +137,7 @@ const Services = () => {
           <div className="flex flex-col md:flex-row">
             <div className="flex flex-col ml-auto w-full md:w-1/2 py-12 px-12">
               <img
-                src="services/appdev.jpg"
+                src="services/appdev.svg"
                 alt="Website Designing"
                 className="w-full h-fit"
               />
@@ -176,7 +176,7 @@ const Services = () => {
             </div>
             <div className="flex flex-col w-full md:w-1/2 py-12 px-12">
               <img
-                src="services/cloud.jpg"
+                src="services/cloud.svg"
                 alt="Website Designing"
                 className="w-full h-fit"
               />

@@ -52,7 +52,7 @@ const ContactForm = () => {
           <iframe
             title="Google Map"
             className="w-full h-64 rounded-lg shadow-md"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83937477554!2d77.06889934417993!3d28.527280343579428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce31ab9421c4d%3A0x268cc9bd37038a8e!2sD%20136%2C%20Abul%20Fazal%20Enclave-I%2C%20New%20Delhi%2C%20Delhi%20110025!5e0!3m2!1sen!2sin!4v1644333123456!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.363084421861!2d77.2909377761462!3d28.55849937562648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce41c52471b0b%3A0x98e4a432e86ce8cc!2sMedia%20Pitch!5e0!3m2!1sen!2sin!4v1710075638927!5m2!1sen!2sin"
             allowFullScreen=""
             loading="lazy"
           ></iframe>

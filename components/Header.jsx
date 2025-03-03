@@ -56,7 +56,7 @@ const Header = () => {
     <>
       {/* Desktop Navigation */}
       <div
-        className={`fixed z-40 font-outfit items-center flex flex-row justify-between w-full md:px-20 transition-all duration-300 hidden md:flex ${
+        className={`fixed z-40 2xl:px-56 font-outfit items-center flex flex-row justify-between w-full md:px-20 transition-all duration-300 hidden md:flex ${
           isScrolled ? "bg-white shadow-md py-3" : "py-5"
         }`}
       >

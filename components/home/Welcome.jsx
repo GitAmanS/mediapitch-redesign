@@ -16,7 +16,7 @@ const fadeInVariant = {
 
 const Welcome = () => {
   return (
-    <div className="flex justify-center flex-col-reverse md:flex-row font-outfit md:pt-24 bg-gradient-to-t from-[#F3FEFD00] to-[#506ba8] text-[#1E439B] w-full min-h-screen h-fit md:px-20">
+    <div className="flex 2xl:px-56 justify-center flex-col-reverse md:flex-row font-outfit md:pt-24 bg-gradient-to-t from-[#F3FEFD00] to-[#506ba8] text-[#1E439B] w-full min-h-screen h-fit md:px-20">
 
       <div className="flex flex-col justify-center space-y-4 md:space-y-6 w-full px-4 sm:px-6 md:px-0 md:w-1/2">
         
